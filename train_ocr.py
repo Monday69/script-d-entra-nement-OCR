@@ -146,7 +146,7 @@ def main():
     entraînement et sauvegarde du modèle final.
     """
     print("=" * 60)
-    print("🔥 Lancement du Fine-Tuning TrOCR (NIGHT RUN) 🔥")
+    print("Lancement du Fine-Tuning TrOCR")
     print("=" * 60)
     
     nb_images = verify_dataset(DATA_DIR)
@@ -171,9 +171,9 @@ def main():
             images_paths.append(img_path)
             texts.append(entry["text"])
         else:
-            print(f"      ⚠️ Image manquante : {img_path}")
+            print(f"Image manquante : {img_path}")
     
-    # Création du dataset Hugging Face à partir des chemins d'images et des textes
+    # Création du dataset  à partir des chemins d'images et des textes
     dataset = Dataset.from_dict({
         "image": images_paths,
         "text": texts
